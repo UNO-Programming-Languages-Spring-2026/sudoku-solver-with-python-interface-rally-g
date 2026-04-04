@@ -14,7 +14,6 @@ class ClingoApp(clingo.application.Application):
         ctl.solve()
         
     def print_model(self, model, printer):
-        atoms = sorted(model.symbols(shown=True), key=str)
         print(Sudoku.from_model(model))
         
 clingo.application.clingo_main(ClingoApp())

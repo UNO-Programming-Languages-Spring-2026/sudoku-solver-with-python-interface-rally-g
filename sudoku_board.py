@@ -9,7 +9,7 @@ class Sudoku:
         s = ""
         for row in range(9):
             for column in range(9):
-                s += self.sudoku[(row+1, column+1)]
+                s += str(self.sudoku[(row+1, column+1)])
                 s += " "
                 
                 if column == 8:
@@ -17,7 +17,7 @@ class Sudoku:
                     if (row + 1) % 3 == 0:
                         s += "\n"
                         
-                if (column + 1) % 3 == 0:
+                if (column + 1) % 3 == 0 and column != 8:
                     s += " "
         
         return s
