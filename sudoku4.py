@@ -1,5 +1,3 @@
-
-import sys
 import clingo
 from sudoku_board import Sudoku
 
