@@ -25,8 +25,16 @@ class Sudoku:
     @classmethod
     def from_str(cls, s: str) -> "Sudoku":
         sudoku = {}
-        # YOUR CODE HERE
+        tokens = s.split()
+
+        for i, tok in enumerate(tokens):
+            if tok != "-":
+                row = i // 9 + 1
+                col = i % 9 + 1
+                sudoku[(row, col)] = int(tok)
+                
         return cls(sudoku)
+
 
     @classmethod
     def from_model(cls, model: clingo.solving.Model) -> "Sudoku":
